@@ -1,0 +1,15 @@
+node_modules/
+dist/
+dist-report/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+.laya-cache/
+.env
+.env.*
+.env.example
+*.tsbuildinfo
+*.ses
+.DS_Store
+GEMINI.md

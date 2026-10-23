@@ -1,0 +1,60 @@
+{
+  "name": "playwright-system1-triage",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Autonomous Playwright test report categorization, CI quality gate, and AI QA calibration benchmark powered by System 1 decision models (Laya local ONNX & Jev TypeSafe API).",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./reporter": {
+      "types": "./dist/src/reporter/system1Reporter.d.ts",
+      "default": "./dist/src/reporter/system1Reporter.js"
+    }
+  },
+  "files": [
+    "dist",
+    "evals/dataset/golden_failures.json",
+    "evals/dataset/recorded_jev_responses.json",
+    "evals/dataset/recorded_laya_onnx_responses.json",
+    "README.md"
+  ],
+  "bin": {
+    "pw-triage": "./dist/src/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "demo": "node src/cli/index.ts demo",
+    "eval": "node evals/runEvals.ts",
+    "triage": "node src/cli/index.ts analyze",
+    "test": "node --test tests/unit/*.test.ts",
+    "test:pw": "npx playwright test"
+  },
+  "keywords": [
+    "playwright",
+    "playwright-reporter",
+    "system-1-models",
+    "laya",
+    "jev",
+    "typesafe-ai",
+    "ai-qa",
+    "test-triage",
+    "confidence-calibration",
+    "quality-gate"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@playwright/test": ">=1.40.0"
+  },
+  "optionalDependencies": {
+    "@receptron/laya": "^0.1.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
