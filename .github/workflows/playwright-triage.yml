@@ -1,0 +1,81 @@
+name: Playwright System 1 Triage & Quality Gate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  playwright-triage:
+    name: E2E Suite + System 1 Cascade Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright suite (emit JSON report)
+        id: pw_run
+        continue-on-error: true
+        run: |
+          PW_JSON_OUTPUT_NAME=test-results/playwright-report.json \
+            npx playwright test --reporter=list,json
+
+      - name: Run System 1 Triage Cascade (Laya Local -> Jev API)
+        id: triage
+        if: always() && hashFiles('test-results/playwright-report.json') != ''
+        env:
+          # Optional: set OPENROUTER_API_KEY or TYPESAFE_API_KEY in repo secrets for live Jev cloud escalation
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+          # Optional: set LAYA_USE_ONNX=1 when @receptron/laya is installed
+          LAYA_USE_ONNX: ${{ vars.LAYA_USE_ONNX || '0' }}
+        run: |
+          set +e
+          node src/cli/index.ts analyze test-results/playwright-report.json dist-report --enforce-gate
+          GATE_EXIT=$?
+          set -e
+          echo "gate_exit_code=${GATE_EXIT}" >> "$GITHUB_OUTPUT"
+
+          if [ -f dist-report/triage-summary.md ]; then
+            cat dist-report/triage-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Auto-retry Playwright last-failed on transient verdict (exit code 3)
+        if: steps.triage.outputs.gate_exit_code == '3'
+        run: |
+          echo "⚡ System 1 Gate returned AUTO_RETRY_TRANSIENT (exit code 3). Re-running failed specs..."
+          npx playwright test --last-failed
+
+      - name: Upload System 1 Triage HTML Dashboard & Verdict
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: system1-triage-report
+          path: dist-report/
+          retention-days: 14
+
+      - name: Enforce CI Quality Gate Verdict
+        if: steps.triage.outputs.gate_exit_code == '1' || steps.triage.outputs.gate_exit_code == '2'
+        env:
+          GATE_EXIT_CODE: ${{ steps.triage.outputs.gate_exit_code }}
+        run: |
+          echo "::error::System 1 Quality Gate failed with exit code ${GATE_EXIT_CODE} (1=BLOCK_MERGE, 2=ESCALATE_AMBIGUOUS)."
+          exit "${GATE_EXIT_CODE}"
