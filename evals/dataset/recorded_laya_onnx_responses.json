@@ -1,0 +1,307 @@
+{
+  "model": "receptron/laya-onnx (convaiinnovations/laya)",
+  "runtime": "onnxruntime-node (CPU)",
+  "recordedAt": "2026-10-23T12:15:48.390Z",
+  "responses": {
+    "STD-01": {
+      "probabilities": {
+        "product_defect": 0.0648,
+        "broken_locator": 0.0191,
+        "flaky_timing": 0.0225,
+        "environment_network": 0.0137,
+        "auth_or_data": 0.003,
+        "test_code_error": 0.8769
+      },
+      "retryableProbability": 0.661,
+      "releaseBlockerScore": 63,
+      "latencyMs": 897.47,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-02": {
+      "probabilities": {
+        "product_defect": 0.1347,
+        "broken_locator": 0.3486,
+        "flaky_timing": 0.0324,
+        "environment_network": 0.0107,
+        "auth_or_data": 0.0067,
+        "test_code_error": 0.4669
+      },
+      "retryableProbability": 0.6274,
+      "releaseBlockerScore": 44,
+      "latencyMs": 896.07,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-03": {
+      "probabilities": {
+        "product_defect": 0.0053,
+        "broken_locator": 0.5109,
+        "flaky_timing": 0.0048,
+        "environment_network": 0.0018,
+        "auth_or_data": 0.0005,
+        "test_code_error": 0.4767
+      },
+      "retryableProbability": 0.5186,
+      "releaseBlockerScore": 58,
+      "latencyMs": 1016.7,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-04": {
+      "probabilities": {
+        "product_defect": 0.0417,
+        "broken_locator": 0.4548,
+        "flaky_timing": 0.0555,
+        "environment_network": 0.0067,
+        "auth_or_data": 0.002,
+        "test_code_error": 0.4393
+      },
+      "retryableProbability": 0.7285,
+      "releaseBlockerScore": 49,
+      "latencyMs": 880.15,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-05": {
+      "probabilities": {
+        "product_defect": 0.0253,
+        "broken_locator": 0.0764,
+        "flaky_timing": 0.1247,
+        "environment_network": 0.0058,
+        "auth_or_data": 0.0018,
+        "test_code_error": 0.7661
+      },
+      "retryableProbability": 0.5958,
+      "releaseBlockerScore": 55,
+      "latencyMs": 961.26,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-06": {
+      "probabilities": {
+        "product_defect": 0.0163,
+        "broken_locator": 0.3721,
+        "flaky_timing": 0.0177,
+        "environment_network": 0.0053,
+        "auth_or_data": 0.0012,
+        "test_code_error": 0.5874
+      },
+      "retryableProbability": 0.6084,
+      "releaseBlockerScore": 59,
+      "latencyMs": 791.66,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-07": {
+      "probabilities": {
+        "product_defect": 0.0487,
+        "broken_locator": 0.0178,
+        "flaky_timing": 0.0234,
+        "environment_network": 0.1311,
+        "auth_or_data": 0.0047,
+        "test_code_error": 0.7742
+      },
+      "retryableProbability": 0.5886,
+      "releaseBlockerScore": 63,
+      "latencyMs": 901.68,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-08": {
+      "probabilities": {
+        "product_defect": 0.0082,
+        "broken_locator": 0.0075,
+        "flaky_timing": 0.0083,
+        "environment_network": 0.0086,
+        "auth_or_data": 0.0008,
+        "test_code_error": 0.9666
+      },
+      "retryableProbability": 0.5879,
+      "releaseBlockerScore": 52,
+      "latencyMs": 774.11,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-09": {
+      "probabilities": {
+        "product_defect": 0.0744,
+        "broken_locator": 0.021,
+        "flaky_timing": 0.0261,
+        "environment_network": 0.0249,
+        "auth_or_data": 0.7144,
+        "test_code_error": 0.1391
+      },
+      "retryableProbability": 0.4702,
+      "releaseBlockerScore": 50,
+      "latencyMs": 898.62,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-10": {
+      "probabilities": {
+        "product_defect": 0.0824,
+        "broken_locator": 0.0745,
+        "flaky_timing": 0.0491,
+        "environment_network": 0.0236,
+        "auth_or_data": 0.0936,
+        "test_code_error": 0.6767
+      },
+      "retryableProbability": 0.5227,
+      "releaseBlockerScore": 43,
+      "latencyMs": 835.43,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-11": {
+      "probabilities": {
+        "product_defect": 0.0062,
+        "broken_locator": 0.0072,
+        "flaky_timing": 0.0055,
+        "environment_network": 0.0025,
+        "auth_or_data": 0.0005,
+        "test_code_error": 0.978
+      },
+      "retryableProbability": 0.4995,
+      "releaseBlockerScore": 41,
+      "latencyMs": 748.94,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "STD-12": {
+      "probabilities": {
+        "product_defect": 0.0104,
+        "broken_locator": 0.0055,
+        "flaky_timing": 0.0119,
+        "environment_network": 0.0039,
+        "auth_or_data": 0.001,
+        "test_code_error": 0.9674
+      },
+      "retryableProbability": 0.5521,
+      "releaseBlockerScore": 43,
+      "latencyMs": 761.78,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "CMP-01": {
+      "probabilities": {
+        "product_defect": 0.0369,
+        "broken_locator": 0.3443,
+        "flaky_timing": 0.1208,
+        "environment_network": 0.041,
+        "auth_or_data": 0.0035,
+        "test_code_error": 0.4536
+      },
+      "retryableProbability": 0.6247,
+      "releaseBlockerScore": 59,
+      "latencyMs": 1010.84,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "CMP-02": {
+      "probabilities": {
+        "product_defect": 0.0395,
+        "broken_locator": 0.2026,
+        "flaky_timing": 0.1026,
+        "environment_network": 0.0131,
+        "auth_or_data": 0.0025,
+        "test_code_error": 0.6398
+      },
+      "retryableProbability": 0.5968,
+      "releaseBlockerScore": 54,
+      "latencyMs": 871.13,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "CMP-03": {
+      "probabilities": {
+        "product_defect": 0.153,
+        "broken_locator": 0.0446,
+        "flaky_timing": 0.0325,
+        "environment_network": 0.0239,
+        "auth_or_data": 0.2592,
+        "test_code_error": 0.4868
+      },
+      "retryableProbability": 0.6153,
+      "releaseBlockerScore": 65,
+      "latencyMs": 968.44,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "CMP-04": {
+      "probabilities": {
+        "product_defect": 0.1112,
+        "broken_locator": 0.4753,
+        "flaky_timing": 0.0317,
+        "environment_network": 0.0338,
+        "auth_or_data": 0.0049,
+        "test_code_error": 0.3431
+      },
+      "retryableProbability": 0.6412,
+      "releaseBlockerScore": 60,
+      "latencyMs": 935.09,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "CMP-05": {
+      "probabilities": {
+        "product_defect": 0.0554,
+        "broken_locator": 0.2435,
+        "flaky_timing": 0.1132,
+        "environment_network": 0.0121,
+        "auth_or_data": 0.0263,
+        "test_code_error": 0.5496
+      },
+      "retryableProbability": 0.6175,
+      "releaseBlockerScore": 56,
+      "latencyMs": 982.64,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "CMP-06": {
+      "probabilities": {
+        "product_defect": 0.1537,
+        "broken_locator": 0.1669,
+        "flaky_timing": 0.1124,
+        "environment_network": 0.1264,
+        "auth_or_data": 0.0113,
+        "test_code_error": 0.4292
+      },
+      "retryableProbability": 0.717,
+      "releaseBlockerScore": 54,
+      "latencyMs": 998.95,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "ADV-01": {
+      "probabilities": {
+        "product_defect": 0.0696,
+        "broken_locator": 0.323,
+        "flaky_timing": 0.2199,
+        "environment_network": 0.0132,
+        "auth_or_data": 0.0071,
+        "test_code_error": 0.3671
+      },
+      "retryableProbability": 0.6238,
+      "releaseBlockerScore": 50,
+      "latencyMs": 988.29,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    },
+    "ADV-02": {
+      "probabilities": {
+        "product_defect": 0.0169,
+        "broken_locator": 0.7259,
+        "flaky_timing": 0.0127,
+        "environment_network": 0.0057,
+        "auth_or_data": 0.0011,
+        "test_code_error": 0.2377
+      },
+      "retryableProbability": 0.468,
+      "releaseBlockerScore": 40,
+      "latencyMs": 844.25,
+      "estimatedCostUsd": 0,
+      "providerName": "laya-local"
+    }
+  }
+}
