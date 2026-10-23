@@ -1,0 +1,71 @@
+{
+  "config": {
+    "rootDir": "tests"
+  },
+  "suites": [
+    {
+      "title": "quote-funnel.spec.ts",
+      "file": "tests/sample-suite/quote-funnel.spec.ts",
+      "specs": [
+        {
+          "id": "spec-pass-1",
+          "title": "Quote Funnel › renders postcode input field",
+          "file": "tests/sample-suite/quote-funnel.spec.ts",
+          "tests": [
+            {
+              "projectName": "chromium",
+              "timeout": 30000,
+              "results": [{ "status": "passed", "duration": 620 }]
+            }
+          ]
+        },
+        {
+          "id": "spec-fail-1",
+          "title": "Quote Funnel › calculates monthly hospital + extras rebate correctly",
+          "file": "tests/sample-suite/quote-funnel.spec.ts",
+          "tests": [
+            {
+              "projectName": "chromium",
+              "timeout": 30000,
+              "results": [
+                {
+                  "status": "failed",
+                  "duration": 2140,
+                  "error": {
+                    "message": "Error: expect(received).toBe(expected) // Object.is equality\nExpected: \"$184.20/mo\"\nReceived: \"$219.00/mo\"",
+                    "stack": "Error: expect(received).toBe(expected)\n    at tests/sample-suite/quote-funnel.spec.ts:11:25"
+                  },
+                  "stderr": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "spec-fail-2",
+          "title": "Quote Results › renders top 3 recommended hospital policies",
+          "file": "tests/sample-suite/quote-results.spec.ts",
+          "tests": [
+            {
+              "projectName": "chromium",
+              "timeout": 30000,
+              "results": [
+                {
+                  "status": "timedOut",
+                  "duration": 30025,
+                  "error": {
+                    "message": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByTestId('quote-card-0') to be visible",
+                    "stack": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\n    at tests/sample-suite/quote-results.spec.ts:34:20"
+                  },
+                  "stderr": [
+                    { "text": "GET https://staging.example.internal/api/v2/quotes 502 (Bad Gateway)" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
