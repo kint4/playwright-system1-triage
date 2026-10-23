@@ -72,6 +72,9 @@ After running `npm run demo`, open **`dist-report/triage-dashboard.html`** in yo
 
 ## AI QA Evaluation & Calibration Benchmark (`npm run eval`)
 
+<img width="1248" height="594" alt="Screenshot 2026-10-23 at 20 39 09" src="https://github.com/user-attachments/assets/efed782d-5090-400b-8e9d-bcb29d5388ad" />
+
+
 > [!NOTE]
 > **Simulated Reference Baseline:** When run without `TYPESAFE_API_KEY` or `LAYA_USE_ONNX=1`, `npm run eval` and `npm run demo` execute the deterministic **Simulated System-1 Baseline** in [`layaAdapter.ts`](./src/models/layaAdapter.ts) and [`jevAdapter.ts`](./src/models/jevAdapter.ts). This allows zero-config offline evaluation of the cascade routing, ECE calibration math, and quality-gate mechanics before connecting live model weights or API keys.
 
